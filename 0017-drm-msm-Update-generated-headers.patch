@@ -1,0 +1,80 @@
+From 20adc6fc130c70f55cc4bff780f1e73b084b872c Mon Sep 17 00:00:00 2001
+From: Stephane Viau <sviau@codeaurora.org>
+Date: Fri, 31 Jul 2015 17:27:19 -0400
+Subject: [PATCH 17/41] drm/msm: Update generated headers
+
+Update current envytools/mster branch with the generated headers
+from WallaceIT/master.
+
+Change-Id: I80205be68052e398b54e06a893becc174c473455
+Signed-off-by: Stephane Viau <sviau@codeaurora.org>
+---
+ drivers/gpu/drm/msm/mdp/mdp5/mdp5.xml.h  | 16 +++-------------
+ drivers/gpu/drm/msm/mdp/mdp_common.xml.h | 12 +-----------
+ 2 files changed, 4 insertions(+), 24 deletions(-)
+
+diff --git a/drivers/gpu/drm/msm/mdp/mdp5/mdp5.xml.h b/drivers/gpu/drm/msm/mdp/mdp5/mdp5.xml.h
+index eb6f454..af9b932 100644
+--- a/drivers/gpu/drm/msm/mdp/mdp5/mdp5.xml.h
++++ b/drivers/gpu/drm/msm/mdp/mdp5/mdp5.xml.h
+@@ -8,17 +8,9 @@ http://github.com/freedreno/envytools/
+ git clone https://github.com/freedreno/envytools.git
+ 
+ The rules-ng-ng source files this header was generated from are:
+-- /home/robclark/src/freedreno/envytools/rnndb/msm.xml                 (    676 bytes, from 2015-05-20 20:03:14)
+-- /home/robclark/src/freedreno/envytools/rnndb/freedreno_copyright.xml (   1453 bytes, from 2015-05-20 20:03:07)
+-- /home/robclark/src/freedreno/envytools/rnndb/mdp/mdp4.xml            (  20915 bytes, from 2015-05-20 20:03:14)
+-- /home/robclark/src/freedreno/envytools/rnndb/mdp/mdp_common.xml      (   2576 bytes, from 2015-07-09 22:10:24)
+-- /home/robclark/src/freedreno/envytools/rnndb/mdp/mdp5.xml            (  36021 bytes, from 2015-07-09 22:10:24)
+-- /home/robclark/src/freedreno/envytools/rnndb/dsi/dsi.xml             (  25802 bytes, from 2015-07-09 22:10:24)
+-- /home/robclark/src/freedreno/envytools/rnndb/dsi/sfpb.xml            (    344 bytes, from 2015-05-20 20:03:07)
+-- /home/robclark/src/freedreno/envytools/rnndb/dsi/mmss_cc.xml         (   1686 bytes, from 2015-05-20 20:03:14)
+-- /home/robclark/src/freedreno/envytools/rnndb/hdmi/qfprom.xml         (    600 bytes, from 2015-05-20 20:03:07)
+-- /home/robclark/src/freedreno/envytools/rnndb/hdmi/hdmi.xml           (  29012 bytes, from 2015-05-20 20:03:14)
+-- /home/robclark/src/freedreno/envytools/rnndb/edp/edp.xml             (  10416 bytes, from 2015-05-20 20:03:14)
++- /local/mnt2/workspace2/sviau/envytools/rnndb/mdp/mdp5.xml            (  36021 bytes, from 2015-07-31 21:25:50)
++- /local/mnt2/workspace2/sviau/envytools/rnndb/freedreno_copyright.xml (   1453 bytes, from 2015-04-30 16:26:30)
++- /local/mnt2/workspace2/sviau/envytools/rnndb/mdp/mdp_common.xml      (   2576 bytes, from 2015-07-31 21:25:50)
+ 
+ Copyright (C) 2013-2015 by the following authors:
+ - Rob Clark <robdclark@gmail.com> (robclark)
+@@ -1311,13 +1303,11 @@ static inline uint32_t REG_MDP5_PP_FBC_LOSSY_MODE(uint32_t i0) { return 0x000000
+ static inline uint32_t __offset_WB(uint32_t idx)
+ {
+ 	switch (idx) {
+-#if 0  /* TEMPORARY until patch that adds wb.base[] is merged */
+ 		case 0: return (mdp5_cfg->wb.base[0]);
+ 		case 1: return (mdp5_cfg->wb.base[1]);
+ 		case 2: return (mdp5_cfg->wb.base[2]);
+ 		case 3: return (mdp5_cfg->wb.base[3]);
+ 		case 4: return (mdp5_cfg->wb.base[4]);
+-#endif
+ 		default: return INVALID_IDX(idx);
+ 	}
+ }
+diff --git a/drivers/gpu/drm/msm/mdp/mdp_common.xml.h b/drivers/gpu/drm/msm/mdp/mdp_common.xml.h
+index 214e2c7..d207656 100644
+--- a/drivers/gpu/drm/msm/mdp/mdp_common.xml.h
++++ b/drivers/gpu/drm/msm/mdp/mdp_common.xml.h
+@@ -8,17 +8,7 @@ http://github.com/freedreno/envytools/
+ git clone https://github.com/freedreno/envytools.git
+ 
+ The rules-ng-ng source files this header was generated from are:
+-- /home/robclark/src/freedreno/envytools/rnndb/msm.xml                 (    676 bytes, from 2015-05-20 20:03:14)
+-- /home/robclark/src/freedreno/envytools/rnndb/freedreno_copyright.xml (   1453 bytes, from 2015-05-20 20:03:07)
+-- /home/robclark/src/freedreno/envytools/rnndb/mdp/mdp4.xml            (  20915 bytes, from 2015-05-20 20:03:14)
+-- /home/robclark/src/freedreno/envytools/rnndb/mdp/mdp_common.xml      (   2576 bytes, from 2015-07-09 22:10:24)
+-- /home/robclark/src/freedreno/envytools/rnndb/mdp/mdp5.xml            (  36021 bytes, from 2015-07-09 22:10:24)
+-- /home/robclark/src/freedreno/envytools/rnndb/dsi/dsi.xml             (  25802 bytes, from 2015-07-09 22:10:24)
+-- /home/robclark/src/freedreno/envytools/rnndb/dsi/sfpb.xml            (    344 bytes, from 2015-05-20 20:03:07)
+-- /home/robclark/src/freedreno/envytools/rnndb/dsi/mmss_cc.xml         (   1686 bytes, from 2015-05-20 20:03:14)
+-- /home/robclark/src/freedreno/envytools/rnndb/hdmi/qfprom.xml         (    600 bytes, from 2015-05-20 20:03:07)
+-- /home/robclark/src/freedreno/envytools/rnndb/hdmi/hdmi.xml           (  29012 bytes, from 2015-05-20 20:03:14)
+-- /home/robclark/src/freedreno/envytools/rnndb/edp/edp.xml             (  10416 bytes, from 2015-05-20 20:03:14)
++- /local/mnt2/workspace2/sviau/envytools/rnndb/mdp/mdp_common.xml (   2576 bytes, from 2015-07-31 21:25:50)
+ 
+ Copyright (C) 2013-2015 by the following authors:
+ - Rob Clark <robdclark@gmail.com> (robclark)
+-- 
+2.8.2
+
