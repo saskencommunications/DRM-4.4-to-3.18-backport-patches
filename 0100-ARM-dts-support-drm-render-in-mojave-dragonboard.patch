@@ -1,0 +1,41 @@
+From 41986860ca3825284bf1c6bab4f6b8a357a241d7 Mon Sep 17 00:00:00 2001
+From: Kasin Li <donglil@codeaurora.org>
+Date: Fri, 10 Jun 2016 16:52:39 -0700
+Subject: [PATCH 100/105] ARM: dts: support drm/render in mojave dragonboard
+
+Adding gpus in DTS to support DRM/render in mojave and dragonboard
+
+Change-Id: I94ff410d919d0ee7290ca85541d2342be170bf65
+Signed-off-by: Kasin Li <donglil@codeaurora.org>
+---
+ arch/arm/boot/dts/qcom/apq8096-auto-dragonboard.dtsi | 1 +
+ arch/arm/boot/dts/qcom/msm8996-agave-adp.dtsi        | 1 +
+ 2 files changed, 2 insertions(+)
+
+diff --git a/arch/arm/boot/dts/qcom/apq8096-auto-dragonboard.dtsi b/arch/arm/boot/dts/qcom/apq8096-auto-dragonboard.dtsi
+index 08d1518..fbc7ece 100644
+--- a/arch/arm/boot/dts/qcom/apq8096-auto-dragonboard.dtsi
++++ b/arch/arm/boot/dts/qcom/apq8096-auto-dragonboard.dtsi
+@@ -340,6 +340,7 @@
+ &mdss_mdp {
+ 	qcom,mdss-pref-prim-intf = "dsi";
+ 	connectors = <&mdss_hdmi>;
++	gpus = <&msm_gpu>;
+ 	memory-region = <&cont_splash_mem>;
+ };
+ 
+diff --git a/arch/arm/boot/dts/qcom/msm8996-agave-adp.dtsi b/arch/arm/boot/dts/qcom/msm8996-agave-adp.dtsi
+index 24341cd..c9295d5 100644
+--- a/arch/arm/boot/dts/qcom/msm8996-agave-adp.dtsi
++++ b/arch/arm/boot/dts/qcom/msm8996-agave-adp.dtsi
+@@ -549,6 +549,7 @@
+ &mdss_mdp {
+ 	qcom,mdss-pref-prim-intf = "dsi";
+ 	connectors = <&mdss_hdmi>;
++	gpus = <&msm_gpu>;
+ 	memory-region = <&cont_splash_mem>;
+ };
+ 
+-- 
+1.9.1
+
