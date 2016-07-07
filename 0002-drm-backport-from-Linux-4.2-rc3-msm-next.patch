@@ -1,4 +1,4 @@
-From 20642dc0a4255897a16145ac9e7a4f5180403aff Mon Sep 17 00:00:00 2001
+From 73e8e69e3a0e7d0cb577f643f3311f2b753435c9 Mon Sep 17 00:00:00 2001
 From: Narasimha Bashyam <narasimha.bashyam@sasken.com>
 Date: Fri, 31 Jul 2015 15:53:30 -0400
 Subject: [PATCH 2/2] drm: backport from Linux 4.2-rc3 + msm-next
@@ -57,7 +57,7 @@ up to e05ed095a634fe582309dbcf29c2b6926044922b:
 
 CRs-Fixed: 1015338
 Change-Id: I28c91ae5f574fa337db6c30c29c4a40c6b1667ca
-Signed-off-by: Stephane Viau <sviau@codeaurora.org>
+Signed-off-by: Narasimha Bashyam <narasimha.bashyam@sasken.com>
 ---
  .../devicetree/bindings/drm/imx/fsl-imx-drm.txt    |   26 +-
  Documentation/devicetree/bindings/drm/msm/dsi.txt  |   41 +-
