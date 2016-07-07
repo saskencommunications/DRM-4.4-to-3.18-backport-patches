@@ -1,7 +1,7 @@
-From f33045ab49efa4ca0ac6a8ed011a018d31081882 Mon Sep 17 00:00:00 2001
-From: Stephane Viau <sviau@codeaurora.org>
+From 20642dc0a4255897a16145ac9e7a4f5180403aff Mon Sep 17 00:00:00 2001
+From: Narasimha Bashyam <narasimha.bashyam@sasken.com>
 Date: Fri, 31 Jul 2015 15:53:30 -0400
-Subject: [PATCH 02/43] drm: backport from Linux 4.2-rc3 + msm-next
+Subject: [PATCH 2/2] drm: backport from Linux 4.2-rc3 + msm-next
 
 For the following directories only:
 
@@ -2067,7 +2067,7 @@ index 9ce8a20..23ce774 100644
  }
  
 diff --git a/drivers/gpu/drm/amd/amdkfd/kfd_device_queue_manager_vi.c b/drivers/gpu/drm/amd/amdkfd/kfd_device_queue_manager_vi.c
-index 4c15212..44c38e8 100644
+index 4c15212a..44c38e8 100644
 --- a/drivers/gpu/drm/amd/amdkfd/kfd_device_queue_manager_vi.c
 +++ b/drivers/gpu/drm/amd/amdkfd/kfd_device_queue_manager_vi.c
 @@ -22,6 +22,10 @@
@@ -2524,7 +2524,7 @@ index b3a7e3b..fa32c32 100644
 +	return mqd;
  }
 diff --git a/drivers/gpu/drm/amd/amdkfd/kfd_packet_manager.c b/drivers/gpu/drm/amd/amdkfd/kfd_packet_manager.c
-index 99b6d28..90f3914 100644
+index 99b6d28..90f39143 100644
 --- a/drivers/gpu/drm/amd/amdkfd/kfd_packet_manager.c
 +++ b/drivers/gpu/drm/amd/amdkfd/kfd_packet_manager.c
 @@ -27,6 +27,7 @@
@@ -4588,7 +4588,7 @@ index aa8bbb4..ddfa601 100644
  
  /**
 diff --git a/drivers/gpu/drm/drm_irq.c b/drivers/gpu/drm/drm_irq.c
-index f9cc68f..9fd784b 100644
+index f9cc68fb..9fd784b 100644
 --- a/drivers/gpu/drm/drm_irq.c
 +++ b/drivers/gpu/drm/drm_irq.c
 @@ -1267,7 +1267,7 @@ EXPORT_SYMBOL(drm_crtc_vblank_off);
@@ -7491,7 +7491,7 @@ index c35e035..d9f2701 100644
  }
 -
 diff --git a/drivers/gpu/drm/i915/i915_gem_context.c b/drivers/gpu/drm/i915/i915_gem_context.c
-index 8867818..b77a8f7 100644
+index 8867818..b77a8f78 100644
 --- a/drivers/gpu/drm/i915/i915_gem_context.c
 +++ b/drivers/gpu/drm/i915/i915_gem_context.c
 @@ -135,8 +135,7 @@ static int get_context_size(struct drm_device *dev)
@@ -9850,7 +9850,7 @@ index 0d46dd2..e1cfa29 100644
  struct i915_hw_ppgtt *i915_ppgtt_create(struct drm_device *dev,
  					struct drm_i915_file_private *fpriv);
 diff --git a/drivers/gpu/drm/i915/i915_gem_render_state.c b/drivers/gpu/drm/i915/i915_gem_render_state.c
-index 521548a..a0201fc 100644
+index 521548a0..a0201fc 100644
 --- a/drivers/gpu/drm/i915/i915_gem_render_state.c
 +++ b/drivers/gpu/drm/i915/i915_gem_render_state.c
 @@ -152,29 +152,26 @@ int i915_gem_render_state_prepare(struct intel_engine_cs *ring,
@@ -28501,7 +28501,7 @@ index 8193a35..9d8af2f 100644
  	return ret;
  }
 diff --git a/drivers/gpu/drm/i915/intel_uncore.c b/drivers/gpu/drm/i915/intel_uncore.c
-index a6d8a3e..45285a9 100644
+index a6d8a3ee..45285a9 100644
 --- a/drivers/gpu/drm/i915/intel_uncore.c
 +++ b/drivers/gpu/drm/i915/intel_uncore.c
 @@ -1455,20 +1455,80 @@ static int gen6_do_reset(struct drm_device *dev)
@@ -30428,7 +30428,7 @@ index 509376fd..5104fc9 100644
  			enum msm_dsi_phy_type type, int id)
  {
 diff --git a/drivers/gpu/drm/msm/dsi/pll/dsi_pll.h b/drivers/gpu/drm/msm/dsi/pll/dsi_pll.h
-index 5a3bb24..b69df19 100644
+index 5a3bb241..b69df19 100644
 --- a/drivers/gpu/drm/msm/dsi/pll/dsi_pll.h
 +++ b/drivers/gpu/drm/msm/dsi/pll/dsi_pll.h
 @@ -27,6 +27,7 @@ struct msm_dsi_pll {
@@ -31455,7 +31455,7 @@ index c4bb9d9..761f739 100644
  	return crtc;
  }
 diff --git a/drivers/gpu/drm/msm/mdp/mdp4/mdp4_irq.c b/drivers/gpu/drm/msm/mdp/mdp4/mdp4_irq.c
-index 7369ee7..64d24fc 100644
+index 7369ee7f..64d24fc 100644
 --- a/drivers/gpu/drm/msm/mdp/mdp4/mdp4_irq.c
 +++ b/drivers/gpu/drm/msm/mdp/mdp4/mdp4_irq.c
 @@ -86,13 +86,22 @@ irqreturn_t mdp4_irq(struct msm_kms *kms)
@@ -36672,7 +36672,7 @@ index 5450fa9..c4777c8 100644
  }
  
 diff --git a/drivers/gpu/drm/radeon/radeon_gem.c b/drivers/gpu/drm/radeon/radeon_gem.c
-index ac3c131..3dcc573 100644
+index ac3c131..3dcc5733 100644
 --- a/drivers/gpu/drm/radeon/radeon_gem.c
 +++ b/drivers/gpu/drm/radeon/radeon_gem.c
 @@ -36,6 +36,7 @@ void radeon_gem_object_free(struct drm_gem_object *gobj)
@@ -37959,5 +37959,5 @@ index 573cb86..1ef7666 100644
  struct drm_radeon_info {
  	uint32_t		request;
 -- 
-2.8.2
+2.5.1
 
